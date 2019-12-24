@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% form_theme formMedecin 'bootstrap_4_layout.html.twig' %}
+{% block contente %}
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+{{ form_start(formMedecin, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_row(formMedecin.nbmed,{'attr':{'placeholder':'Entrer votre matricule','value':((count))}})}} 
+{{ form_row(formMedecin.matricule,{'attr':{'placeholder':'Entrer votre matricule'}})}} 
+{{ form_row(formMedecin.prenom,{'attr':{'placeholder':'Entrer votre prenom '}})}}
+{{ form_row(formMedecin.nom,{'attr':{'placeholder':'Entrer votre nom '}}) }}
+{{ form_row(formMedecin.datenais,{'attr':{'placeholder':'Entrer votre Datenais'}}) }} 
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+{{ form_row(formMedecin.service,{'attr':{'placeholder':'Entrer votre Datenais','onchange':'remplir(this.value)'}}) }} 
+{{ form_row(formMedecin.telephone,{'attr':{'placeholder':'Entrer votre  Tellephone'}}) }} 
+{{ form_end(formMedecin) }}
+</div>
+<script src="/jss/style.js"></script>
+{% endblock %}
+

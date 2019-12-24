@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block contente %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Matricule</th>
+            <th>Service</th>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Date Naissance</th>
+          <th  colspan="2 ">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+     {% for medecin in medecins %}
+        
+   
+        <tr>
+            <td scope="row">{{medecin.id}}</td>
+            <td>M{{medecin.matricule}}{{medecin.nbMed}}</td>
+            <td>{{medecin.service.libelle}}</td>
+            <td>{{medecin.prenom}}</td>
+            <td>{{medecin.nom}}</td>
+           <td>{{medecin.datenais | date('d/m/y')}}</td>
+            <td><a name="" id="" class="btn btn-primary" href="{{path('admin.Medecin.edit',{'id':medecin.id})}}" role="button" ><i class="fas fa-user-edit"></i></a> </td>
+            <td><a name="" id="delete" class="btn btn-danger" href="{{path('admin.Medecin.delete',{'id':medecin.id})}}" role="button" OnClick="return confirm('Voulez-vous vraiment supprimer ?');"><i class="far fa-trash-alt"></i></a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

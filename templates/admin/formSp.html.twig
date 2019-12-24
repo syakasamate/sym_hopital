@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% form_theme formSpecilite 'bootstrap_4_layout.html.twig' %}
+{% block contente %}
+{{ form_start(formSpecilite, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_row(formSpecilite.libelle,{'attr':{'placeholder':'Entrer votre Specialite'}})}} 
+{{ form_row(formSpecilite.service,{'attr':{'placeholder':'Entrer votre Datenais','onchange':'remplir(this.value)'}}) }} 
+{{ form_end(formSpecilite) }}
+<script src="/js/style.js"></script>
+{% endblock %}
+

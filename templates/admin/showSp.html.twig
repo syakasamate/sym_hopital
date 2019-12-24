@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block contente %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>libele</th>
+            <th>Service</th>
+          <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+     {% for specialite in specialites %}
+        
+   
+        <tr>
+            <td scope="row">{{specialite.id}}</td>
+            <td>M{{specialite.libelle}}</td>
+            <td>{{specialite.service.libelle}}</td>
+           <td><a name="" id="" class="btn btn-primary" href="{{path('admin.specialite.edit',{'id':specialite.id})}}" role="button"><i class="fas fa-user-edit"></i></a></td> 
+            <td><a name="" id="delete" class="btn btn-danger" href="{{path('admin.Specialite.delete',{'id':specialite.id})}}" role="button"><i class="far fa-trash-alt"></i></a></td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

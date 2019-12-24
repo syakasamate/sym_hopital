@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block contente %}
+<table class="table" id='service'>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Libelle</th>
+            <th>action</th>
+
+                        
+        </tr>
+    </thead>
+    <tbody>
+     {% for service in services %}
+        
+   
+        <tr>
+            <td scope="row">{{service.id}}</td>
+            <td>{{service.libelle}}     </td>
+               <td> <a name="" id="" class="btn btn-primary" href="{{path('admin.service.edit',{'id':service.id})}}" role="button"><i class="fas fa-user-edit"></i></a>     </td>
+              <td><a name="" id="" class="btn btn-danger" href="{{path('admin.service.delete',{'id':service.id})}}" role="button"><i class="far fa-trash-alt"></i></a>     </td>
+       
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script src="/js/style.js"></script>
+{% endblock %}
