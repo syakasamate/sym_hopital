@@ -119,23 +119,17 @@ class AdminController extends AbstractController
 
             $entityManager->flush();
           
-           // return  $this->redirectToRoute('admin.medecin.show');
+         return  $this->redirectToRoute('admin.medecin.show');
         }
 
 
          
-      /*  $items = $repos->findAll();
-        $count = count($items);
-        $count = sprintf("%05d", $count + 1);
-          $id = ($medecin->getId());
-        $count = sprintf("%05d",   $id);*/
+      
         $count= $repos->max();
-       //dump($count);
         foreach ($count as $k ) {
             
         }
 
-        //echo $k;
        $count=(sprintf("%05d",$k+1));
 
         return $this->render('admin/formMed.html.twig', [

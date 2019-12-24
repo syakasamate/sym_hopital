@@ -35,17 +35,20 @@ class Medecin
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $prenom;
       
     /**
      *@Assert\Length(min="0", minMessage="le nom ne doit pas etre vide ")
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(())
      */
     private $nom;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\NotBlank
      */
     private $datenais;
 
