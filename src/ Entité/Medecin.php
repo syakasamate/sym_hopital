@@ -42,7 +42,6 @@ class Medecin
     /**
      *@Assert\Length(min="0", minMessage="le nom ne doit pas etre vide ")
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(())
      */
     private $nom;
 
